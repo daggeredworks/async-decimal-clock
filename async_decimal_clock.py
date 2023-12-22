@@ -53,6 +53,7 @@ class Clock:
         else:
             return (dt.hour, dt.minute, dt.second, dt.microsecond)
 
+@dataclass
 class DecimalClock(Clock):
     """ Represents a 'ticking' decimal clock. """
 
