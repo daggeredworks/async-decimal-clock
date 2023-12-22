@@ -16,7 +16,7 @@ class Clock:
     """ Represents a 'ticking' clock. """
     current_time: tuple = ()
 
-    def __str__(self):
+    def __str__(self) -> str:
         """ Returns the Clock's current time. """
 
         try:
@@ -24,7 +24,7 @@ class Clock:
         except (asyncio.CancelledError, KeyboardInterrupt):
             raise asyncio.CancelledError
 
-    async def do_tick(self):
+    async def do_tick(self) -> None:
         """ Wraps the blocking clock tick. """
 
         try:
@@ -34,7 +34,7 @@ class Clock:
         else:
             self.update(ct)
 
-    def update(self, ct) -> None:
+    def update(self, ct: tuple) -> None:
         """ Updates the current time if it has changed. """
 
         try:
@@ -92,7 +92,7 @@ class DecimalClock(Clock):
         MINUTES = 1
         HOURS = 0.1
 
-    def __str__(self):
+    def __str__(self) -> str:
         """ Returns the DecimalClock's current time. """
 
         try:
